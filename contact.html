@@ -8,6 +8,7 @@
   <title>Greenliving Services (Pty) Ltd  - Contact</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -50,15 +51,49 @@
  }
  
  .logo {
-     width: 150px; /* Set the width of the logo */
-     height: 70px; /* Set the height of the logo */
-     border-radius: 10px; /* Add a border radius to give the logo a rounded appearance */
-     transition: opacity 0.5s ease; /* Add a smooth transition for the flickering effect */
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for a professional touch */
- }
- 
- 
-   </style>
+    margin-block-start: 0; /* Remove top margin */
+    
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, opacity 0.5s ease; /* Smooth transition for scaling and opacity */
+    -webkit-transition: all linear 400ms; /* Add vendor-specific prefixes for better compatibility */
+    -moz-transition: all linear 400ms;
+    -o-transition: all linear 400ms;
+  
+  top: auto;
+  opacity: 1;
+  left: 0;
+  width: 200px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.logo-text {
+    font-size: 16px; /* Adjust font size for the logo text */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Media Query for Adjusting Logo on Smaller Screens or Mobile Devices */
+@media (max-width: 680px) and (-webkit-min-device-pixel-ratio: 2),
+only screen and ((orientation: portrait) or (orientation: landscape)) {
+    .logo {
+        width: 140px; /* Adjust the width for smaller screens */
+        height: 140px; /* Adjust the height for smaller screens */
+    }
+    .logo-text {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+}
+
+
+
+  .centered-heading {
+    text-align: center;
+  }
+</style>
 
 <style>
 
@@ -103,9 +138,8 @@
 
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <div class="main">
-          <img src="assets/img/main.jpeg" alt="Greenliving Services Logo" class = "main">
-      </div>
+        <img src="assets/img/main.jpeg" alt="Greenliving Services Logo" class="logo">
+
         <!-- <h1>Greenliving Services (Pty) Ltd <span>.</span></h1> -->
       </a>
 
@@ -115,11 +149,11 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="services.html">What we do</a></li>
-          <li><a href="projects.html">How we work</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="Gallery.html" class="active">Gallery</a></li>
          
         
-          <li><a href="contact.html" class="active">Contact</a></li>
+        
         </ul>
       </nav><!-- .navbar -->
 
@@ -132,7 +166,6 @@
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/breadcrumbs-bg.jpg');">
       <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-        <h2>Contact</h2>
         <ol>
           <li><a href="index.html">Home</a></li>
           <li>Contact</li>
@@ -207,10 +240,10 @@
                 <strong>Email:</strong> info@greenlivingservices.co.za<br>
               </p>
               <div class="social-links d-flex mt-3">
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
+                <a href="https://twitter.com/gls_pty" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
+                <a href="http://tiktok.com/@gls_pty" class="d-flex align-items-center justify-content-center"><i class="bi bi-tiktok"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100094907856554&mibextid=ZbWKwL" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+                <a href="https://instagram.com/glspty" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
               </div>
             </div>
           </div><!-- End footer info column-->
@@ -220,14 +253,14 @@
             <ul>
               <li><a href="#">Home</a></li>
               <li><a href="#">About us</a></li>
-              <li><a href="#">what we do</a></li>
+              <li><a href="#">Services</a></li>
               <li><a href="#">Terms of service</a></li>
               <li><a href="#">Privacy policy</a></li>
             </ul>
           </div><!-- End footer links column-->
 
           <div class="col-lg-2 col-md-3 footer-links">
-            <h4>What we do</h4>
+            <h4>Services</h4>
             <ul>
               <li><a href="#">Instant Lawn</a></li>
               <li><a href="#">Hard Landscaping</a></li>

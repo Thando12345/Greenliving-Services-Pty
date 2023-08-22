@@ -8,6 +8,8 @@
   <title>Greenliving Services (Pty) Ltd  - About</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -50,52 +52,49 @@
  }
  
  .logo {
-     width: 150px; /* Set the width of the logo */
-     height: 70px; /* Set the height of the logo */
-     border-radius: 10px; /* Add a border radius to give the logo a rounded appearance */
-     transition: opacity 0.5s ease; /* Add a smooth transition for the flickering effect */
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for a professional touch */
- }
- 
+    margin-block-start: 0; /* Remove top margin */
+    
+    
 
- body, html {
-    height: 100%;
-    margin: 0;
-}
-
-.dynamic-style {
     display: flex;
-    flex-direction: column; /* Stack the sections vertically */
     justify-content: center;
     align-items: center;
-    height: 100%;
-    background-color: #eaf2e5; /* Green light background color */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow effect */
+    transition: transform 0.3s ease, opacity 0.5s ease; /* Smooth transition for scaling and opacity */
+    -webkit-transition: all linear 400ms; /* Add vendor-specific prefixes for better compatibility */
+    -moz-transition: all linear 400ms;
+    -o-transition: all linear 400ms;
+  
+  top: auto;
+  opacity: 1;
+  left: 0;
+  width: 200px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
 }
 
-.dynamic-style h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #333; /* Darker text color */
-    font-family: Arial, sans-serif;
+.logo-text {
+    font-size: 16px; /* Adjust font size for the logo text */
+    font-weight: bold;
+    text-align: center;
 }
 
-.dynamic-style p {
-    text-align: left; /* Align the text to the left for a more professional look */
-    font-size: 18px;
-    line-height: 1.6;
-    color: #333; /* Darker text color */
-    font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: 10px 0; /* Add margin between sections */
+/* Media Query for Adjusting Logo on Smaller Screens or Mobile Devices */
+@media (max-width: 680px) and (-webkit-min-device-pixel-ratio: 2),
+only screen and ((orientation: portrait) or (orientation: landscape)) {
+    .logo {
+        width: 140px; /* Adjust the width for smaller screens */
+        height: 140px; /* Adjust the height for smaller screens */
+    }
+    .logo-text {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
 }
 
 
 
- 
-   </style>
+  .centered-heading {
+    text-align: center;
+  }
+</style>
 
 <style>
 
@@ -140,9 +139,8 @@
 
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <div class="main">
-          <img src="assets/img/main.jpeg" alt="Greenliving Services Logo" class = "main">
-      </div>
+        <img src="assets/img/main.jpeg" alt="Greenliving Services Logo" class="logo">
+
         <!-- <h1>Greenliving Services (Pty) Ltd <span>.</span></h1> -->
       </a>
 
@@ -151,15 +149,45 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-          <li><a href="services.html">What we do</a></li>
-          <li><a href="projects.html">How we work</a></li>
+      
+          <li><a href="services.html">Services</a></li>
+          <li><a href="Gallery.html" class="active">Gallery</a></li>
           
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
 
     </div>
+
+    <style>
+   .card {
+      background-color: #4caf50; /* Green background color */
+      color: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .card p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  
+    </style>
+
+    
   </header><!-- End Header -->
 
   <main id="main">
@@ -168,7 +196,7 @@
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/breadcrumbs-bg.jpg');">
       <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-        <h2>About</h2>
+    
         <ol>
           <li><a href="index.html">Home</a></li>
           <li>About</li>
@@ -200,27 +228,22 @@
       
          
 
-          <div class="section-header">
-            <h2 style="text-align: center;"><span>Mission  </span></h2>
-            <!-- <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis dolorem dolore earum</p> -->
-          </div>
+         <br>
+          <h3 style="text-align: center; color: green;"><span>Mission </span></h3><br>
           <p>To deliver the best product and service in the most cost efficient way
             possible to any client and to build healthy business relations in the
             industry that knows us by reputation.</p>
           
       
-          <div class="section-header">
-            <h2 style="text-align: center;"><span>Vision </span></h2>
+         
+            <h3 style="text-align: center; color: green;"><span>Vision</span></h3><br>
             <!-- <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis dolorem dolore earum</p> -->
           </div><br>
           <p>Landscaping is an essential, value-adding element of all construction projects
             In addition, it must be catered for up-front as part of the design and planning phases.</p>
 
          
-            <div class="section-header">
-              <h2 style="text-align: center;"><span>Values </span></h2>
-              
-            </div>
+            <h3 style="text-align: center; color: green;"><span>Values</span></h3><br>
     
        
           <p>Greenliving Services (Pty) Ltd works with committed, productive
@@ -237,6 +260,12 @@
       </div>
       
       
+          <!-- Dynamic Card Section -->
+          <div class="dynamic-card-section" id="dynamic-cards">
+            <!-- Dynamic cards will be added here -->
+          </div>
+        </div>
+      </div>
 
 
   </main><!-- End #main -->
@@ -262,10 +291,10 @@
                 <strong>Email:</strong> info@greenlivingservices.co.za<br>
               </p>
               <div class="social-links d-flex mt-3">
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
+                <a href="https://twitter.com/gls_pty" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
+                <a href="http://tiktok.com/@gls_pty" class="d-flex align-items-center justify-content-center"><i class="bi bi-tiktok"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100094907856554&mibextid=ZbWKwL" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+                <a href="https://instagram.com/glspty" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
               </div>
             </div>
           </div><!-- End footer info column-->
@@ -275,14 +304,14 @@
             <ul>
               <li><a href="#">Home</a></li>
               <li><a href="#">About us</a></li>
-              <li><a href="#">what we do</a></li>
+              <li><a href="#">Services</a></li>
               <li><a href="#">Terms of service</a></li>
               <li><a href="#">Privacy policy</a></li>
             </ul>
           </div><!-- End footer links column-->
 
           <div class="col-lg-2 col-md-3 footer-links">
-            <h4>What we do</h4>
+            <h4>Services</h4>
             <ul>
               <li><a href="#">Instant Lawn</a></li>
               <li><a href="#">Hard Landscaping</a></li>
@@ -325,6 +354,46 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    const dynamicCardData = [
+      {
+        title: "Executive Summary",
+        content: "Greenliving Services is a full-service landscaping and gardening company that aims to provide high-quality and innovative gardening solutions to residential and commercial clients. Our team of experienced professionals is dedicated to creating visually appealing and sustainable outdoor spaces that improve the quality of life for our clients. Our comprehensive services include garden design, planting and maintenance, lawn care, tree and shrub pruning, irrigation systems installation, and outdoor lighting installation."
+      },
+      {
+        title: "Objectives",
+        content: "Build a strong reputation for excellence in the local landscaping industry. Expand our client base by targeting both residential and commercial customers. Generate consistent revenue and achieve profitability within the first year of operations. Develop strong relationships with suppliers to ensure reliable and cost-effective sourcing of materials. Foster a positive work environment and invest in the professional growth and development of our employees. Increase brand awareness and visibility through targeted marketing and advertising campaigns. Extend our services to include landscape construction projects in the long term."
+      },
+      {
+        title: "Products and Services",
+        content: "Garden Design and Installation: Our team of landscape designers will work closely with clients to create personalized garden designs that incorporate their preferences and environmental considerations. We will then execute the design by installing plants, hardscaping features, and irrigation systems. Garden Maintenance: We offer regular garden maintenance services, including lawn mowing, weeding, pest control, trimming, and fertilization. Our goal is to ensure that our clients' gardens remain pristine and healthy throughout the year. Irrigation Systems: Our experts will design and install efficient irrigation systems to provide optimal water distribution and reduce water waste. Tree and Shrub Pruning: Trained arborists will prune trees and shrubs to promote healthy growth, enhance aesthetics, and prevent potential hazards. Lawn Care: Our lawn care services include mowing, edging, fertilizing, seeding, and pest control to maintain lush and healthy lawns."
+      }
+
+     
+    ];
+  
+    function generateDynamicCards() {
+      const dynamicCardsContainer = document.getElementById("dynamic-cards");
+
+      dynamicCardData.forEach(cardData => {
+        const card = document.createElement("div");
+        card.classList.add("card");
+
+        const title = document.createElement("h3");
+        title.textContent = cardData.title;
+
+        const content = document.createElement("p");
+        content.textContent = cardData.content;
+
+        card.appendChild(title);
+        card.appendChild(content);
+
+        dynamicCardsContainer.appendChild(card);
+      });
+    }
+
+    window.addEventListener('load', generateDynamicCards);
+  </script>
 
 </body>
 

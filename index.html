@@ -6,8 +6,10 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Greenliving Services|(Pty) Ltd </title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="We offer landscaping and lawn installation services. Contact us for quality gardening solutions." name="description">
+<meta content="landscaping, gardening, lawn installation, quality services" name="keywords">
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -50,12 +52,44 @@
  }
  
  .logo {
-     width: 150px; /* Set the width of the logo */
-     height: 70px; /* Set the height of the logo */
-     border-radius: 10px; /* Add a border radius to give the logo a rounded appearance */
-     transition: opacity 0.5s ease; /* Add a smooth transition for the flickering effect */
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for a professional touch */
- }
+    margin-block-start: 0; /* Remove top margin */
+    
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, opacity 0.5s ease; /* Smooth transition for scaling and opacity */
+    -webkit-transition: all linear 400ms; /* Add vendor-specific prefixes for better compatibility */
+    -moz-transition: all linear 400ms;
+    -o-transition: all linear 400ms;
+  
+  top: auto;
+  opacity: 1;
+  left: 0;
+  width: 100px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.logo-text {
+    font-size: 16px; /* Adjust font size for the logo text */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Media Query for Adjusting Logo on Smaller Screens or Mobile Devices */
+@media (max-width: 680px) and (-webkit-min-device-pixel-ratio: 2),
+only screen and ((orientation: portrait) or (orientation: landscape)) {
+    .logo {
+        width: 140px; /* Adjust the width for smaller screens */
+        height: 140px; /* Adjust the height for smaller screens */
+    }
+    .logo-text {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+}
+
+
 
   .centered-heading {
     text-align: center;
@@ -72,30 +106,77 @@ body {
 }
 
 /* Style the div that contains the logo */
-.main {
-    display: flex; /* Use flexbox to center the logo */
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Adjust the height as needed */
-}
+
 
 /* Style the logo image */
-.main img {
-    width: 150px; /* Adjust the width to make it slightly smaller */
-    height: 600px; /* Increase the height to make it four times taller */
-    border-radius: 30%; /* Reduce the border-radius to make the circle smaller */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to create depth */
-    transition: transform 0.5s ease; /* Add a smooth transition on hover */
-}
 
 /* Add the zooming effect on hover */
-.main img:hover {
-    transform: scale(1.6); /* Increase the scale value to create a stronger zoom effect */
-}
 
 
+
+    /* Animation styles */
+ 
+</style>
+
+
+<style>
+  /* Your existing styles here */
+
+  /* Animation styles */
+  .animated-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    perspective: 1000px; /* For 3D rotation effect */
+  }
+
+  .animated-item {
+    position: relative;
+    transition: transform 1s ease;
+  }
+
+  .animated-item.rotate {
+    transform: rotateY(180deg);
+  }
+
+  /* Add more of your existing styles here */
 
 </style>
+<script>
+  particlesJS('particles-js', {
+    particles: {
+      number: { value: 50 }, // Number of particles
+      size: { value: 5 },    // Size of particles
+      shape: { type: 'circle' }, // Shape of particles
+      color: '#888888',      // Color of particles
+      opacity: { value: 0.7, random: true },
+      line_linked: { enable: false }
+    },
+    interactivity: {
+      events: {
+        onhover: { enable: false },
+        onclick: { enable: false }
+      }
+    }
+  });
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "Greenliving Services (Pty) Ltd",
+    "description": "We offer landscaping and lawn installation services. Contact us for quality gardening solutions.",
+    "url": "",
+    "logo": "Greenliving Services (Pty) Ltd",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+27 69 414 7620",
+      "email": "info@greenlivingservices.co.za",
+      "contactType": "customer service"
+    }
+  }
+</script>
+  
 </head>
 
 <body>
@@ -106,9 +187,8 @@ body {
 
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <div class="main">
-          <img src="assets/img/main.jpeg" alt="Greenliving Services Logo" class = "main">
-      </div>
+        <img src="assets/img/main.jpeg" alt="Greenliving Services Logo" class="logo">
+
         <!-- <h1>Greenliving Services (Pty) Ltd <span>.</span></h1> -->
       </a>
 
@@ -118,47 +198,40 @@ body {
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="service-details.html#constructions">What we do</a></li>
-          <li><a href="projects.html">How we work</a></li>
+          <li><a href="service-details.html#constructions">Services</a></li>
+          <li><a href="Gallery.html" class="active">Gallery</a></li>
+          <li><a href="FAQ.html">FAQ</a></li>
          
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
 
     </div>
-    <script>
-      function fetchAndInjectContent() {
-          const targetDiv = document.getElementById("constructionsContent");
-          fetch("service-details.html")
-              .then(response => response.text())
-              .then(data => {
-                  const parser = new DOMParser();
-                  const doc = parser.parseFromString(data, "text/html");
-                  const content = doc.querySelector("#constructions");
-                  targetDiv.innerHTML = content.innerHTML;
-              })
-              .catch(error => {
-                  console.error("Error fetching content:", error);
-              });
-      }
-  </script>
+  
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero">
 
-    <div class="info d-flex align-items-center">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6 text-center">
-            <h2 data-aos="fade-down">Welcome to <span>Greenliving Services (Pty) Ltd </span></h2>
-            <p data-aos="fade-up">We pride ourselves in only using the highest quality plants,<br>
-              materials, and equipment to ensure that all our services are of the highest standard <br>Making the gardens we install and maintain delightfully inviting all year around.</p>
-           
+    <div class="landing-container">
+      <!-- Particle animation will be added here -->
+      <div id="particles-js"></div>
+    
+      <!-- Your existing content goes here -->
+      <div class="info d-flex align-items-center">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 text-center"><br><br>
+              <h2 data-aos="fade-down">Welcome to <span>Greenliving Services (Pty) Ltd</span></h2>
+              <p data-aos="fade-up">We pride ourselves in only using the highest quality plants,<br>
+                materials, and equipment to ensure that all our services are of the highest standard <br>Making the gardens we install and maintain delightfully inviting all year around.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    
+    
 
     <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
@@ -190,7 +263,7 @@ body {
       <div class="container" data-aos="fade-up">
         <div id="constructionsContent">
         <div class="section-header">
-          <h2>What we do</h2>
+          <h2>Services</h2>
           <!-- <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis dolorem dolore earum</p> -->
         </div>
 
@@ -288,53 +361,109 @@ body {
 
         <div class="section-header">
           <h2>WHY CHOOSE GREENLIVING SERVICES (PTY) LTD</h2>
-         
         </div>
-
-
+      
         <div class="col-xl-7 d-flex align-items-center">
           <div class="card-body">
-           
-
-            <div class="section-header">
-              <div class="centered-heading">
-              
+            <div class="animated-content" id="animatedContent">
+      
+              <div class="animated-item">
+                <div class="centered-heading">
+                  <!-- Content here if needed -->
+                </div>
+                <br>
               </div>
-             <br>
-            </div>
-            <div class="section-header">
-              <h3> <b>Knowledge</b></h3>
+              <h3 style="text-align: center; color: green;"><span>Knowledge</span></h3><br>
              
-            </div>
-        
-       
-              <p>
-             
-              We bring over 10 years of knowledge and experience to your project.<br> We have the creativity to offer “Out of
-              the box” ideas and designs.<br> We are familiar with the correct materials and plants to use for your project.<br> We
-              have the experience to do the specialized installations our competitors aren't capable of producing!!</p>
-
-
-              <div class="section-header">
-                <h3><b>Service</b></h3>
+                <p>
+                  We bring over 10 years of knowledge and experience to your project.<br> We have the creativity to offer "Out of
+                  the box" ideas and designs.<br> We are familiar with the correct materials and plants to use for your
+                  project.<br> We have the experience to do the specialized installations our competitors aren't capable of
+                  producing!!
+                </p>
               </div>
-                <p>We keep our promises and we deliver what we commit to.<br>As a small company, we value YOU as a client and
-                  welcome any type of communication to give you the assurance that your project is headed for the right
-                  outcome.</p>
+      
+              <div class="animated-item">
+                <div class="section-header">
+                  <h3 style="text-align: center; color: green;"><b>Service</b></h3>
+                </div>
                
-
-                  <div class="section-header">
-                    <h3> <b>Quality</b></h3>
-                  </div>
-                    <p>We have an untarnished reputation and will never sacrifice quality over quantity</p>
-                 
-
-
-                
+                <p>
+                  We keep our promises and we deliver what we commit to.<br> As a small company, we value YOU as a client
+                  and welcome any type of communication to give you the assurance that your project is headed for the right
+                  outcome.
+                </p>
+              </div>
+      
+              <div class="animated-item">
+                <div class="section-header">
+                  <h3 style="text-align: center; color: green;"><b>Quality</b></h3>
+                </div>
+                <p>
+                  We have an untarnished reputation and will never sacrifice quality over quantity.
+                </p>
+              </div>
+      
+            </div>
           </div>
+        </div>
+      
+        <!-- Your existing scripts and other body content here -->
+        <script>
+          // Automatic rotation interval
+          const rotationInterval = setInterval(() => {
+            const animatedContent = document.getElementById('animatedContent');
+            const animatedItems = animatedContent.querySelectorAll('.animated-item');
+      
+            // Find the currently rotated item
+            const rotatedItem = animatedContent.querySelector('.animated-item.rotate');
+            let nextIndex = 0;
+      
+            if (rotatedItem) {
+              rotatedItem.classList.remove('rotate');
+              nextIndex = (Array.from(animatedItems).indexOf(rotatedItem) + 1) % animatedItems.length;
+            }
+      
+            // Apply rotation to the next item
+            animatedItems[nextIndex].classList.add('rotate');
+          }, 5000); // Rotate every 5 seconds
+      
+          // Stop the rotation when the user interacts with the content
+          const animatedContent = document.getElementById('animatedContent');
+          animatedContent.addEventListener('click', () => {
+            clearInterval(rotationInterval);
+          });
+        </script>
+      
+        <!-- Your existing scripts and other body content here -->
+        
 
+        <script>
+.landing-container {
+  position: relative;
+  overflow: hidden;
+}
 
-       
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+        </script>
+      </body>
+      
+      </html>
+    
+      
+      
+      
+      
+      
+      
 
 
        
@@ -375,10 +504,11 @@ body {
                 <strong>Email:</strong> info@greenlivingservices.co.za<br>
               </p>
               <div class="social-links d-flex mt-3">
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
+                <a href="https://twitter.com/gls_pty" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
+                <a href="http://tiktok.com/@gls_pty" class="d-flex align-items-center justify-content-center"><i class="bi bi-tiktok"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100094907856554&mibextid=ZbWKwL" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+                <a href="https://instagram.com/glspty" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+               
               </div>
             </div>
           </div><!-- End footer info column-->
@@ -388,14 +518,14 @@ body {
             <ul>
               <li><a href="#">Home</a></li>
               <li><a href="#">About us</a></li>
-              <li><a href="#">what we do</a></li>
+              <li><a href="#">Services</a></li>
               <li><a href="#">Terms of service</a></li>
               <li><a href="#">Privacy policy</a></li>
             </ul>
           </div><!-- End footer links column-->
 
           <div class="col-lg-2 col-md-3 footer-links">
-            <h4>What we do</h4>
+            <h4>Services</h4>
             <ul>
               <li><a href="#">Instant Lawn</a></li>
               <li><a href="#">Hard Landscaping</a></li>
